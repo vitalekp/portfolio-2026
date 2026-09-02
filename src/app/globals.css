@@ -1,34 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --accent: #4f46e5;
-  --accent-foreground: #ffffff;
-  --muted: #f4f4f5;
-  --border: rgba(0, 0, 0, 0.1);
+  --background: #f7f5f1;
+  --surface: #ffffff;
+  --foreground: #14162b;
+  --primary: #2f355c;
+  --primary-hover: #363651;
+  --accent: #e7472b;
+  --muted: #666666;
+  --border: rgba(20, 22, 43, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --accent: #818cf8;
-    --accent-foreground: #0a0a0a;
-    --muted: #18181b;
-    --border: rgba(255, 255, 255, 0.12);
-  }
+  --font-sans: var(--font-inter);
 }
 
 html {
@@ -39,9 +31,43 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--accent-foreground);
+  color: #ffffff;
+}
+
+@keyframes bounce-up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-up {
+  animation: bounce-up 1.4s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(18deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+
+.animate-wave {
+  display: inline-block;
+  animation: wave 1.6s ease-in-out infinite;
 }

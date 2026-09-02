@@ -1,7 +1,11 @@
 export const profile = {
   name: "Vitalii Pushkarov",
+  firstName: "Vitalii",
   role: "Fullstack Developer",
-  tagline: "I build fast, reliable products with React, Next.js and Node.js.",
+  greeting: "Hi!",
+  tagline: "I build interfaces that just work.",
+  description:
+    "I'm a Fullstack Developer with 4 years of experience building products with React, Next.js and Node.js.",
   location: "Ukraine",
   availability: "Available for new opportunities",
   email: "vitalekpushkarov@gmail.com",
@@ -26,12 +30,23 @@ export const about = {
   ],
 };
 
-export type Skill = {
+export const skills: string[] = [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Tailwind CSS",
+  "PostgreSQL",
+  "MongoDB",
+  "Docker",
+];
+
+export type SkillGroup = {
   category: string;
   items: string[];
 };
 
-export const skills: Skill[] = [
+export const skillGroups: SkillGroup[] = [
   { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
   { category: "Backend", items: ["Node.js", "Express", "REST APIs", "GraphQL"] },
   { category: "Data", items: ["PostgreSQL", "MongoDB", "Redis"] },
